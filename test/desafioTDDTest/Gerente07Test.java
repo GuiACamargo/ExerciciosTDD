@@ -8,7 +8,7 @@ import desafioTDD.Gerente07;
 
 class Gerente07Test {
 	
-	private Gerente07 gerente;
+	Gerente07 gerente;
 
 	@BeforeEach
 	void setUp() throws Exception {

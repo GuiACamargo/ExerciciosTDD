@@ -35,25 +35,31 @@ class Listas02Test {
 		ps4 = new VideoGame02("PS4", 1800, 100, "Sony", "Slim", false);
 		games = new ArrayList<>();
 		listaGames.setVideoGames(games);
-		games.add(ps4);
-		games.add(ps4Usado);
 		
 		listaLivros = new ListaLivros02();
 		l1 = new Livro02("Harry Potter", 40, 50, "J. K. Rowling", "fantasia", 300);
 		l2 = new Livro02("Java POO", 20, 50, "GFT", "educativo", 500);
 		livros = new ArrayList<>();
 		listaLivros.setLivros(livros);
-		livros.add(l1);
-		livros.add(l2);
-		
+			
 		listas.setListaGames(listaGames);
 		listas.setListaLivros(listaLivros);
 	}
 	
 	@Test
 	void deveCalcularOPatrimonioCorretamente() throws Exception {
+		games.add(ps4);
+		games.add(ps4Usado);
+		livros.add(l1);
+		livros.add(l2);
 		double total = listas.calculaPatrimonio();
 		Assertions.assertEquals(190000.0, total);
+	}
+	
+	@Test
+	void deveCalcularOPatrimonioSemItensRetornando0() throws Exception {
+		double total = listas.calculaPatrimonio();
+		Assertions.assertEquals(0, total);
 	}
 	
 

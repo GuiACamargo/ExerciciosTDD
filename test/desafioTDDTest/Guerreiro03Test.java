@@ -28,5 +28,11 @@ class Guerreiro03Test {
 		guerreiro.aprenderMagia("Empurrão");
 		Assertions.assertEquals("Empurrão", guerreiro.Magias(0));
 	}
+	
+	@Test
+	void deveConfirmarQueOAtaqueFoiExecutadoDevolvendoTrue() throws Exception {
+		guerreiro.attack();
+		Assertions.assertEquals(true, guerreiro.getAttackExecutado());
+	}
 
 }

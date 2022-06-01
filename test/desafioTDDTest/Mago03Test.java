@@ -29,4 +29,10 @@ class Mago03Test {
 		Assertions.assertEquals("Bola de Fogo", mago.Magias(0));
 	}
 	
+	@Test
+	void deveConfirmarQueOAtaqueFoiExecutadoDevolvendoTrue() throws Exception {
+		mago.attack();
+		Assertions.assertEquals(true, mago.getAttackExecutado());
+	}
+	
 }

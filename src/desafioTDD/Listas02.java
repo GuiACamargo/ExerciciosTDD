@@ -26,15 +26,20 @@ public class Listas02 {
 	}
 	
 	public double calculaPatrimonio() {
-		double multVideo = 0;
-		for(int i = 0; i < getListaGames().getVideoGames().size(); i++) {
-			multVideo = multVideo + (getListaGames().getVideoGames().get(i).getPreco() * getListaGames().getVideoGames().get(i).getQtd());
+		if (getListaGames().getVideoGames().size() != 0) {
+			double multVideo = 0;
+			for(int i = 0; i < getListaGames().getVideoGames().size(); i++) {
+				multVideo = multVideo + (getListaGames().getVideoGames().get(i).getPreco() * getListaGames().getVideoGames().get(i).getQtd());
+			}
+			double multLivros = 0;
+			for(int i = 0; i < getListaLivros().getLivros().size(); i++) {
+				multLivros = multLivros + (getListaLivros().getLivros().get(i).getPreco() * getListaLivros().getLivros().get(i).getQtd());
+			}
+			double total = multVideo + multLivros;
+			return total;
+		} else {
+			double total = 0;
+			return total;
 		}
-		double multLivros = 0;
-		for(int i = 0; i < getListaLivros().getLivros().size(); i++) {
-			multLivros = multLivros + (getListaLivros().getLivros().get(i).getPreco() * getListaLivros().getLivros().get(i).getQtd());
-		}
-		double total = multVideo + multLivros;
-		return total;
 	}
 }

@@ -11,6 +11,7 @@ public class Mago03 extends Personagem03 {
 
 	private List<String> magia = new ArrayList<String>();
 	private Random random = new Random();
+	private Boolean attackExecutado = false;
 
 	@Override
 	public void lvlUp() {
@@ -32,12 +33,20 @@ public class Mago03 extends Personagem03 {
 	public String Magias(int index) {
 		return magia.get(index);
 	}
+	
+	public Boolean getAttackExecutado() {
+		return attackExecutado;
+	}
+
+	public void setAttackExecutado(Boolean attackExecutado) {
+		this.attackExecutado = attackExecutado;
+	}
 
 	@Override
 	public void attack() {
 		int dano = (getInteligencia() * getLevel()) + random.nextInt(300);
 		System.out.println("Voce como mago efetuou: " + dano + " de dano!");
-		
+		setAttackExecutado(true);
 	}
 
 }
